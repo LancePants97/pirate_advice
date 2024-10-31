@@ -13,3 +13,93 @@
  *= require_tree .
  *= require_self
  */
+
+.ocean-background {
+  position: relative; /* Positioning context for absolute children */
+  height: 100vh; /* Full height of the viewport */
+  background-image: url('PIRATE-BACKGROUND.jpg'); /* Your background image */
+  background-size: cover; /* Cover the whole element */
+  background-position: center; /* Center the image */
+  color: white; /* Text color */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center the quote vertically */
+  align-items: center; /* Center the quote horizontally */
+  text-align: center; /* Center text alignment */
+}
+
+.refresh {
+  position: absolute; /* Position the refresh text absolutely */
+  top: 20px; /* Adjust to move it down from the top */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Adjust for the width of the element */
+  font-size: 1.5em; /* Font size for the refresh text */
+  color: white; /* Text color */
+  text-align: center; /* Center the text */
+  z-index: 1; /* Ensure it appears above other content */
+}
+
+.quote {
+  font-size: 3em; /* Larger font size for the quote */
+  font-weight: bold; /* Make the text bold */
+  margin: 0; /* Remove default margin */
+  text-shadow: 
+    -1px -1px 0px black,  
+    1px -1px 0px black,
+    -1px  1px 0px black,
+    1px  1px 0px black; /* Text outline effect */
+}
+
+.parrot {
+  position: absolute; /* Position the parrot absolutely */
+  width: 100px; /* Adjust size as needed */
+  animation: fly 10s linear infinite; /* Animation for flying */
+}
+
+.pirate-image {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px; /* Specific width */
+  height: 100px; /* Specific height */
+  cursor: pointer;
+}
+
+.click-text {
+  position: absolute;
+  top: 100px; /* Adjust as needed to position below the pirate */
+  left: 25px; /* Align with the pirate image */
+  color: white; /* Change color to contrast with the background */
+  font-size: 16px; /* Adjust font size as needed */
+  text-align: center; /* Center align the text */
+}
+
+@keyframes fly {
+  0% {
+    top: 0;
+    left: 100%; /* Start from the right side */
+  }
+  25% {
+    top: 20%; /* Adjust as needed */
+    left: 75%; /* Move slightly left */
+  }
+  50% {
+    top: 40%; /* Adjust as needed */
+    left: 50%; /* Move to the middle */
+  }
+  75% {
+    top: 60%; /* Adjust as needed */
+    left: 25%; /* Move further left */
+  }
+  100% {
+    top: 100%; /* Move to the bottom */
+    left: -100%; /* Exit off the left side */
+  }
+}
+
+
+
+
+
+
+

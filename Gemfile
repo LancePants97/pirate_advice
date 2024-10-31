@@ -49,6 +49,16 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 end
 
+group :test do
+  gem "rspec-rails", '~> 7.0.0'
+  gem "capybara"
+  gem "launchy"
+  gem "shoulda-matchers", "~> 5.0"
+  gem "webmock"
+  gem "vcr"
+  gem "pry"
+end
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -59,4 +69,6 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem 'faraday'
 

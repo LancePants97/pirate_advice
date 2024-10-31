@@ -1,0 +1,45 @@
+<div class="ocean-background">
+  <div class="refresh"><%= @refresh %></div>
+  <div class="quote"><%= @pirate_advice %></div>
+  <img class="parrot" src="<%= asset_path('pirate_ship.png') %>" alt="Flying Parrot" />
+
+  <img id="pirate" class="pirate-image" src="<%= asset_path('pirate_dude.png') %>" alt="Pirate" style="cursor: pointer;" />
+  <p id="click-text" class="click-text">Click me!</p>
+
+  <audio id="pirate-music" src="<%= asset_path('sea_shanty.mp3') %>" preload="auto"></audio>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const parrot = document.querySelector('.parrot');
+    let posX = window.innerWidth; // Start from the right side
+    let posY = 0;
+
+    function animateParrot() {
+      posX -= 2; // Move left by decreasing the x position
+      posY += Math.sin(posX / 50) * 2; // Creates a wave effect
+
+      parrot.style.transform = `translate(${posX}px, ${posY}px)`;
+
+      if (posX > -100) { // Continue moving until it exits the left side
+        requestAnimationFrame(animateParrot);
+      } else {
+        posX = window.innerWidth; // Reset position to the right
+        animateParrot();
+      }
+    }
+
+    animateParrot();
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const pirateImage = document.getElementById('pirate');
+    const pirateMusic = document.getElementById('pirate-music');
+
+    pirateImage.addEventListener('click', function() {
+      pirateMusic.play(); // Play music when pirate image is clicked
+    });
+  });
+</script>
